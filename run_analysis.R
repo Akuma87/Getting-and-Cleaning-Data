@@ -1,6 +1,5 @@
-
+#Downloading the dataset
 filename <- "getdata_dataset.zip"
-
 if (!file.exists(filename)){
   fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "
   download.file(fileURL, filename)
@@ -20,7 +19,6 @@ featuresWanted.names <- features[featuresWanted,2]
 featuresWanted.names = gsub('-mean', 'Mean', featuresWanted.names)
 featuresWanted.names = gsub('-std', 'Std', featuresWanted.names)
 featuresWanted.names <- gsub('[-()]', '', featuresWanted.names)
-
 
 # Load the datasets
 train <- read.table("UCI HAR Dataset/train/X_train.txt")[featuresWanted]
